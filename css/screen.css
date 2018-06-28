@@ -1,0 +1,189 @@
+@font-face {
+  font-family: amiga;
+  src: url("../fonts/amiga4ever_pro2.ttf");
+  font-weight: 400;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNWMwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmNWEwMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff5c00), color-stop(100%, #ff5a00));
+  background: -moz-linear-gradient(#ff5c00, #ff5a00);
+  background: -webkit-linear-gradient(#ff5c00, #ff5a00);
+  background: linear-gradient(#ff5c00, #ff5a00);
+}
+
+.bg {
+  width: 100%;
+  width: calc(100% - 4rem);
+  height: 100%;
+  height: calc(100% - 4rem);
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: -90;
+}
+.bg.bg1 {
+  background-image: url("../img/headphones.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.banner {
+  width: 100%;
+  font-family: amiga, sans-serif;
+}
+.banner + .banner {
+  margin-top: 2.4rem;
+}
+
+#headline, #demosong, #metadata, #controls, #choosefile, #chooseurl {
+  text-align: center;
+}
+
+#info {
+  max-width: calc(100% - 2.6rem);
+  padding: 1.25rem 1.3rem;
+  background: rgba(20, 20, 20, 0.86);
+  color: #f9f9f9;
+}
+
+#headline {
+  max-width: calc(100% - 2rem);
+  padding: 1.2rem 1rem;
+  background: #fff;
+  color: #232323;
+}
+#headline h1 {
+  margin: 0;
+}
+@media only screen and (max-width: 45rem) {
+  #headline h1 {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 45rem) {
+  #headline h1 {
+    font-size: 4.5rem;
+  }
+}
+
+#demosong {
+  margin-top: 3rem;
+}
+#demosong a {
+  color: #232323;
+  font-size: 0.7rem;
+}
+
+#metadata {
+  display: block;
+}
+
+#choosefile input {
+  padding: 0.5rem;
+  background: #f7f7f7;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(215, 99, 34, 0.78);
+}
+
+#choosefile, #controls, #chooseurl {
+  margin-top: 1.9rem;
+}
+
+#demos, #chooseurl {
+  text-align: center;
+}
+#demos > div, #chooseurl > div {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(215, 99, 34, 0.78);
+  padding: 1rem;
+  background: #fff;
+}
+#demos > div h2, #chooseurl > div h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+#demos > div .song, #chooseurl > div .song {
+  display: block;
+  text-decoration: none;
+  color: #4C4CBD;
+}
+#demos > div .song + .song, #chooseurl > div .song + .song {
+  margin-top: 0.65rem;
+}
+#demos > div .song .size, #chooseurl > div .song .size {
+  vertical-align: super;
+  font-size: 0.6rem;
+  margin-left: 0.3rem;
+}
+#demos > div .song .size:before, #chooseurl > div .song .size:before {
+  content: "(";
+}
+#demos > div .song .size:after, #chooseurl > div .song .size:after {
+  content: ")";
+}
+
+.control {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 2.5rem;
+  background-color: #505050;
+  display: inline-block;
+  box-shadow: 0px 9px 0px #323232, 0px 9px 25px rgba(0, 0, 0, 0.7);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+.control:active, .control.pressed {
+  box-shadow: 0px 3px 0px #323232, 0px 3px 6px rgba(0, 0, 0, 0.7);
+}
+.control#play {
+  background-image: url("../img/play.svg");
+  background-size: 75%;
+  background-position: 16px 9px;
+  background-repeat: no-repeat;
+}
+.control#pause {
+  background-image: url("../img/pause.svg");
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.control#loop {
+  display: none;
+}
+.control#loop + label {
+  background-image: url("../img/loop.svg");
+  background-size: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.control#loop:checked + label {
+  box-shadow: 0px 3px 0px #323232, 0px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+#sliders {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 1.9rem 0 0 auto;
+  text-align: left;
+  border-radius: 0.35rem;
+  border: 1px solid rgba(215, 99, 34, 0.78);
+  padding: 1rem;
+  background: #f7f7f7;
+  line-height: 2;
+}
+#sliders > div {
+  display: inline-flex;
+  justify-content: space-between;
+}
+#sliders > div > input {
+  margin-left: 1rem;
+}
