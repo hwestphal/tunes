@@ -27,11 +27,12 @@ window.libopenmpt = {
                 height = canvasCtx.canvas.height,
                 barWidth = (width / bufferLength) * 1.5,
                 barHeight,
-                x = 0;
+                x = 0,
+                i;
             requestAnimationFrame(visualize);
             analyzer.getByteFrequencyData(dataArray);
             canvasCtx.clearRect(0, 0, width, height);
-            for (var i = 0; i < bufferLength; i++) {
+            for (i = 0; i < bufferLength; i++) {
                 barHeight = dataArray[i] / 2;
                 canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ', 50, 50)';
                 canvasCtx.fillRect(x, height - barHeight / 2, barWidth, barHeight);
@@ -44,7 +45,6 @@ window.libopenmpt = {
         }
 
         function afterLoad(path, buffer) {
-            document.querySelectorAll('#pitch,#tempo').forEach(e => e.value = 1);
             player.play(buffer);
             player.currentPlayingNode.disconnect();
             player.currentPlayingNode.connect(analyzer);
