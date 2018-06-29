@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Selected Tunes</title>
+  <title>Oldskool Tunes</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
@@ -20,7 +20,7 @@
   <div class="bg bg1"></div>
   <div id="content">
     <div id="headline" class="banner">
-      <h1>Selected Tunes</h1>
+      <h1>Oldskool Tunes</h1>
     </div>
     <div id="metadata" class="banner">
       <span id="title">nothing loaded</span>
@@ -29,19 +29,12 @@
       <a id="play" class="control"></a>
       <br>
       <div id="sliders">
-        <div>
-          <label for="tempo">Tempo</label>
-          <input id="tempo" type="range" min="0.01" max="2" step="0.01">
-        </div>
-        <div>
-          <label for="pitch">Pitch</label>
-          <input id="pitch" type="range" min="0.01" max="2" step="0.01">
-        </div>
+        <canvas id="viz" width="300" height="100"></canvas>
       </div>
     </div>
     <div id="demos" class="banner">
       <div>
-        <h2>Tunes</h2>
+        <h2>Select a tune...</h2>
         <a class="song" data-modurl="tunes/jwsong.okt" href="#">JW Song (1992)</a>
         <a class="song" data-modurl="tunes/partyline.okt" href="#">Partyline (1992)</a>
         <a class="song" data-modurl="tunes/ruckzuck.okt" href="#">Ruckzuck (1991)</a>
