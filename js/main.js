@@ -34,7 +34,7 @@ window.libopenmpt = {
             canvasCtx.clearRect(0, 0, width, height);
             for (i = 0; i < bufferLength; i++) {
                 barHeight = dataArray[i] / 2;
-                canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ', 50, 50)';
+                canvasCtx.fillStyle = 'rgb(' + Math.floor(barHeight + 100) + ', 50, 50)';
                 canvasCtx.fillRect(x, height - barHeight / 2, barWidth, barHeight);
                 x += barWidth + 1;
             }
