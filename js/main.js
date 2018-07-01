@@ -8,7 +8,7 @@ window.libopenmpt = {
 
         function init() {
             if (player === undefined) {
-                player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1));
+                player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1, 80));
                 analyzer = player.context.createAnalyser();
                 analyzer.fftSize = 64;
                 bufferLength = analyzer.frequencyBinCount;
